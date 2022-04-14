@@ -2,17 +2,17 @@ using UnityEngine;
 
 namespace RADCharacterController
 {
-    [RequireComponent(typeof(Weapon))]
-    public class PlayerShooting : MonoBehaviour
+    [RequireComponent(typeof(Weapon2D))]
+    public class PlayerShooting2D : MonoBehaviour
     {
         public Transform gunParent;
 
-        private Weapon gun;
+        private Weapon2D gun;
         private bool isShooting;
 
         private void Awake()
         {
-            gun = GetComponent<Weapon>();
+            gun = GetComponent<Weapon2D>();
             gun.Shooter = gameObject;
         }
 

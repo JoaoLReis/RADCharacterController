@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RADCharacterController
 {
-    public class Weapon : MonoBehaviour
+    public class Weapon2D : MonoBehaviour
     {
         public float damage;
         public float attackSpeed;
@@ -27,7 +27,7 @@ namespace RADCharacterController
         {
             lastShotTime = Time.timeSinceLevelLoad;
             var go = Instantiate(bulletPrefab, gunEnd.position, gunEnd.rotation);
-            var bullet = go.GetComponent<Projectile>();
+            var bullet = go.GetComponent<Projectile2D>();
             bullet.shooter = Shooter;
             bullet.Damage = damage;
             Destroy(go, 2f);
