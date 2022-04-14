@@ -6,7 +6,7 @@ namespace RADCharacterController
     {
         public float damage;
         public float attackSpeed;
-        public GameObject prefab;
+        public GameObject bulletPrefab;
         public Transform gunEnd;
 
         private float lastShotTime;
@@ -26,7 +26,7 @@ namespace RADCharacterController
         public void InstantiateBullet()
         {
             lastShotTime = Time.timeSinceLevelLoad;
-            var go = Instantiate(prefab, gunEnd.position, gunEnd.rotation);
+            var go = Instantiate(bulletPrefab, gunEnd.position, gunEnd.rotation);
             var bullet = go.GetComponent<Projectile>();
             bullet.shooter = Shooter;
             bullet.Damage = damage;
